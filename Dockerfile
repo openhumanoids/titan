@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY . /titan
 WORKDIR /titan
+RUN yes "Y" | ./setup/install_drake_prereqs.sh
 RUN mkdir build
 WORKDIR /titan/build
 RUN cmake ..

@@ -19,3 +19,20 @@ Required packages:
     python-numpy \
     python-scipy \
     python-yaml
+
+
+# Building Locally
+
+    mkdir build
+    cd build
+    cmake ..
+    make
+
+# Building In Docker
+
+    docker build -t titan .
+
+# Checklist for updating Drake
+
+    - [ ] Update SHA in CMakeLists.txt
+    - [ ] cp build/src/drake/setup/ubuntu/16.04/install_prereqs.sh setup/install_drake_prereqs.sh

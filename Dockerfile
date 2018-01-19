@@ -1,7 +1,6 @@
-# titan
+FROM ubuntu:xenial-20180112.1
 
-Required packages:
-
+RUN apt-get update && apt-get install -y \
     autoconf \
     cmake \
     freeglut3-dev \
@@ -19,3 +18,10 @@ Required packages:
     python-numpy \
     python-scipy \
     python-yaml
+
+COPY . /titan
+WORKDIR /titan
+RUN mkdir build
+WORKDIR /titan/build
+RUN cmake ..
+RUN make

@@ -11,7 +11,15 @@
 
 # Building In Docker
 
-    docker build -t titan .
+    cd setup
+    ./docker_build.py
+    ./docker_run.py
+
+    # in the shell created by `docker_run.py`:
+    mkdir build
+    cd build
+    cmake ..
+    make
 
 # Checklist for updating Drake
 

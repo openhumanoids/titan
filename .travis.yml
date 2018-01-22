@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+
+services:
+  - docker
+
+script:
+  - cd setup
+  - ./docker_build.py
+  - ./docker_run.py --entrypoint="mkdir build && cd build && cmake .. && make"

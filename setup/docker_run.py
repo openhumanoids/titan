@@ -5,18 +5,20 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("-e", "--entrypoint", type=str, default="", help="(optional) thing to run in container")
+    parser.add_argument("-c", "--command", type=str, default="", help="(optional) thing to run in container")
     args = parser.parse_args()
-    if args.entrypoint and args.entrypoint != "":
-        entrypoint = "--entrypoint=\"{0.entrypoint}\"".format(args)
+    if args.command and args.command != "":
+        command = "bash -c \"{}\"".format(args.command)
     else:
-        entrypoint = "-it"
+        command = ""
     cmd = """\
     docker run \
       --name titan \
       -v {source_dir}:/titan \
-      {entrypoint} \
+      -it \
       --rm \
-      titan-dependencies
-    """.format(source_dir=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."), entrypoint=entrypoint)
+      titan-dependencies \
+      {command}\
+    """.format(source_dir=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."), command=command)
+    print("command:", cmd)
     os.system(cmd)

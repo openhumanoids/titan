@@ -16,6 +16,7 @@
     ./docker_run.py
 
     # in the shell created by `docker_run.py`:
+    cd /titan
     mkdir build
     cd build
     cmake ..

@@ -4,6 +4,10 @@ sudo: required
 services:
   - docker
 
+branches:
+  only:
+    - master
+
 script:
   - cd setup
   - ./docker_build.py

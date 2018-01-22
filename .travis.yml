@@ -9,6 +9,7 @@ branches:
     - master
 
 script:
+  - mkdir -p ~/.cache/bazel/_bazel_travis
   - cd setup
   - ./docker_build.py
   - ./docker_run.py --command="mkdir -p /titan/build && cd /titan/build && cmake .. && make" 

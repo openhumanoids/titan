@@ -1,0 +1,14 @@
+language: generic
+sudo: required
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+
+script:
+  - cd setup
+  - ./docker_build.py
+  - ./docker_run.py --command="mkdir -p /titan/build && cd /titan/build && cmake .. && make" 

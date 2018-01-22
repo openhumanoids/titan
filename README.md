@@ -2,8 +2,8 @@
 
 # Building Locally
 
-    ./setup/install_titan_prereqs.sh
-    ./setup/install_drake_prereqs.sh
+    sudo ./setup/install_titan_prereqs.sh
+    sudo ./setup/install_drake_prereqs.sh
     mkdir build
     cd build
     cmake ..

@@ -18,11 +18,12 @@ Required packages:
     python-lxml \
     python-numpy \
     python-scipy \
-    python-yaml
+    python-yaml \
+    libyaml-cpp-dev
 
 
 # Building Locally
-
+    sudo setup/install_drake_prereqs.sh
     mkdir build
     cd build
     cmake ..

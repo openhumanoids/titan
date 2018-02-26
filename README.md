@@ -1,17 +1,8 @@
 # titan
 
-# Building Locally
-
-    sudo ./setup/install_titan_prereqs.sh
-    sudo ./setup/install_drake_prereqs.sh
-    mkdir build
-    cd build
-    cmake ..
-    make
-
 # Building In Docker
 
-Make sure that you can run `docker` without `sudo`. To set that up, just do:
+On Ubuntu, you should make sure that you can run `docker` without `sudo`. To set that up, just do:
 
     sudo usermod -aG docker $USER
 
